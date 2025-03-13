@@ -24,43 +24,62 @@ where
 -matrix - print capacity matrix. Optional
 
 ### Results:
-    <h2>Actual Flow of Goods</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Terminal</th>
-                <th>Shop</th>
-                <th>Actual Flow (units)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Термінал 1</td><td>Магазин 1</td><td>15</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 2</td><td>10</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 3</td><td>20</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 4</td><td>15</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 5</td><td>10</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 6</td><td>20</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 7</td><td>15</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 8</td><td>15</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 9</td><td>10</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 10</td><td>0</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 11</td><td>0</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 12</td><td>0</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 13</td><td>0</td></tr>
-            <tr><td>Термінал 1</td><td>Магазин 14</td><td>0</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 1</td><td>0</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 2</td><td>0</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 3</td><td>0</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 4</td><td>10</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 5</td><td>10</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 6</td><td>10</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 7</td><td>15</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 8</td><td>15</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 9</td><td>10</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 10</td><td>20</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 11</td><td>10</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 12</td><td>15</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 13</td><td>5</td></tr>
-            <tr><td>Термінал 2</td><td>Магазин 14</td><td>10</td></tr>
-        </tbody>
-    </table>
+#### Actual Flow of Goods
+
+| Terminal  | Shop  | Actual Flow (units) |
+|-----------|---------|--------------------------|
+| Термінал 1 | Магазин 1  | 15  |
+| Термінал 1 | Магазин 2  | 10  |
+| Термінал 1 | Магазин 3  | 20  |
+| Термінал 1 | Магазин 4  | 15  |
+| Термінал 1 | Магазин 5  | 10  |
+| Термінал 1 | Магазин 6  | 20  |
+| Термінал 1 | Магазин 7  | 15  |
+| Термінал 1 | Магазин 8  | 15  |
+| Термінал 1 | Магазин 9  | 10  |
+| Термінал 1 | Магазин 10 | 0   |
+| Термінал 1 | Магазин 11 | 0   |
+| Термінал 1 | Магазин 12 | 0   |
+| Термінал 1 | Магазин 13 | 0   |
+| Термінал 1 | Магазин 14 | 0   |
+| Термінал 2 | Магазин 1  | 0   |
+| Термінал 2 | Магазин 2  | 0   |
+| Термінал 2 | Магазин 3  | 0   |
+| Термінал 2 | Магазин 4  | 10  |
+| Термінал 2 | Магазин 5  | 10  |
+| Термінал 2 | Магазин 6  | 10  |
+| Термінал 2 | Магазин 7  | 15  |
+| Термінал 2 | Магазин 8  | 15  |
+| Термінал 2 | Магазин 9  | 10  |
+| Термінал 2 | Магазин 10 | 20  |
+| Термінал 2 | Магазин 11 | 10  |
+| Термінал 2 | Магазин 12 | 15  |
+| Термінал 2 | Магазин 13 | 5   |
+| Термінал 2 | Магазин 14 | 10  |
+
+#### Result analysis
+
+**1. Which terminals provide the highest flow of goods to stores?**
+**Answer:** 'Термінал 1' provides a flow of 60 units.
+
+**2. Which routes have the lowest capacity, and how does this impact the overall flow?**
+**Answer:** Overall, the routes from 'Термінал' to 'Склад' have low capacity.
+- 'Термінал 1' should have a capacity of 130 units instead of 60 units.
+- 'Термінал 2' should have a capacity of 130 units instead of 55 units.
+- The entire network is inefficient due to the low capacity of 'Термінал'.
+
+**3. Which stores received the least goods, and can their supply be increased by improving the capacity of certain routes?**
+**Answer:**
+- The capacity from 'Термінал 2' to 'Склад 4' is 30 units, but 'Склад 4' can supply (15+10+20+5+10=60).
+- Therefore, 'Магазин 10' to 'Магазин 14' receive the least amount of goods.
+
+**4. Are there bottlenecks that can be eliminated to improve the efficiency of the logistics network?**
+**Answer:** Yes.
+- 'Склад 1' can supply (15+10+20=45), but 'Термінал 1' can only supply 25. The capacity from 'Термінал 1' to 'Склад 1' should be increased to 45 units.
+- 'Склад 2' can supply (15+10+25=50), but 'Термінал 1' and 'Термінал 2' together supply only 20+10=30 units. The route capacity should be increased:
+  - 'Термінал 1' to 'Склад 2' to 30 units.
+  - 'Термінал 2' to 'Склад 2' to 20 units.
+- 'Склад 3' can supply (15+10+20=45), but 'Термінал 1' and 'Термінал 2' together supply only 15+15=30 units. The route capacity should be increased:
+  - 'Термінал 1' to 'Склад 3' to 30 units.
+- 'Склад 4' can supply (15+10+20+5+10=60), but 'Термінал 2' supplies only 30 units. The route capacity should be increased:
+  - 'Термінал 1' to 'Склад 4' to 60 units.

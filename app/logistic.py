@@ -1,4 +1,4 @@
-from logistic_data import labels, edges, sources, sinks
+from logistic_data import labels, edges, sources, sinks, warehouses_sinks
 import argparse
 from collections import deque
 
@@ -92,8 +92,25 @@ def edmonds_karp(capacity_matrix, source, sink):
 
     return max_flow
 
+total_required_capacity_flow_by_source_map = {}
 # Print the maximum flow from each source to each sink
 for i_idx, source in enumerate(sources):
-    print(f"From '{source}'")
+    total_capacity_flow_by_source = 0
     for j_idx, sink in enumerate(sinks):
-        print(f"From '{source}' to '{sink}': {edmonds_karp(capacity_matrix, labels.index(source), labels.index(sink))}")
+        capacity_flow = edmonds_karp(capacity_matrix, labels.index(source), labels.index(sink))
+        print(f"From '{source}' to '{sink}': {capacity_flow}")
+        total_capacity_flow_by_source += capacity_flow
+    total_required_capacity_flow_by_source_map[source] = total_capacity_flow_by_source
+
+
+print(f"Total required capacity flow: {total_required_capacity_flow_by_source_map}")
+
+total_required_capacity_flow_by_source_map = {}
+for i_idx, source in enumerate(sources):
+    total_capacity_flow_by_source = 0
+    for j_idx, sink in enumerate(warehouses_sinks):
+        capacity_flow = edmonds_karp(capacity_matrix, labels.index(source), labels.index(sink))
+        print(f"From '{source}' to '{sink}': {capacity_flow}")
+        total_capacity_flow_by_source += capacity_flow
+    total_required_capacity_flow_by_source_map[source] = total_capacity_flow_by_source
+print(f"Total awailable capacity flow: {total_required_capacity_flow_by_source_map}")
