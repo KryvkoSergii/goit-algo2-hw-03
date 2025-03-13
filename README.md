@@ -94,5 +94,7 @@ poetry run python .\app\tree_comparison.py
 ```
 
 ### Results
+```
 Total range_query time for Dict: 1.00726 seconds.
 Total range_query time for OOBTree: 0.00180 seconds.
+```
