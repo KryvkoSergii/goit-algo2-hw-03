@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.13"
 networkx = "^3.4.2"
 matplotlib = "^3.10.1"
+btrees = "^6.1"
 
 
 [build-system]

@@ -83,3 +83,16 @@ where
   - 'Термінал 1' to 'Склад 3' to 30 units.
 - 'Склад 4' can supply (15+10+20+5+10=60), but 'Термінал 2' supplies only 30 units. The route capacity should be increased:
   - 'Термінал 1' to 'Склад 4' to 60 units.
+
+
+## Task 2. Comparing the performance of OOBTree and dictionary for segmented queries
+
+Develop a program to store a large set of product data in two data structures — OOBTree and dict — and introduce a comparative analysis of their performance for executing work queries.
+
+```bash
+poetry run python .\app\tree_comparison.py
+```
+
+### Results
+Total range_query time for Dict: 1.00726 seconds.
+Total range_query time for OOBTree: 0.00180 seconds.
